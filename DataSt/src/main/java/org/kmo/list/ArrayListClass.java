@@ -1,4 +1,4 @@
-package org.kmo.List;
+package org.kmo.list;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,5 +44,8 @@ public class ArrayListClass {
         logger.info("size");
         System.out.println(arr.size());
 //        更多api请看https://www.runoob.com/manual/jdk11api/java.base/java/util/ArrayList.html
+        for (String e:arr){
+            System.out.printf("%s ",e);
+        }
     }
 }
