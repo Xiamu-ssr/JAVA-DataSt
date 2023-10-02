@@ -23,9 +23,10 @@ import java.util.List;
 
 public class P01 {
     private Logger logger = LoggerFactory.getLogger("斗地主");
+    private final String testflag = "";//or ""
 
 //牌类
-    private class Card{
+    private class Card implements Comparable<Card>{
         private String number;
         private String color;
         private int size;
@@ -64,7 +65,30 @@ public class P01 {
         public String toString() {
             return color+number;
         }
+
+        @Override
+        public int compareTo(Card o) {
+            return Integer.compare(this.size, o.size);
+        }
     }
+//玩家
+    private class Player{
+    public String name;
+    public List<Card> cards;
+    public Player(String name){
+        this.name = name;
+        this.cards = new ArrayList<>();
+    }
+    public void getCard(Card c){
+        cards.add(c);
+    }
+    public void getCard(List<Card> c){
+        cards.addAll(c);
+    }
+    public void sortCards(){
+        Collections.sort(cards);
+    }
+}
 //房间
     private class Room{
         private String[] numbers = {"3","4","5","6","7","8","9","10","J","Q","K","A","2"};
@@ -90,31 +114,55 @@ public class P01 {
          * */
         public void start(){
 //            洗牌
+            if (testflag.equals("test")){
+                System.out.print("洗牌前：");
+                System.out.println(allCards);
+            }
             Collections.shuffle(allCards);
             logger.info("洗牌成功");
+            if (testflag.equals("test")){
+                System.out.print("洗牌后：");
+                System.out.println(allCards);
+            }
 //            发牌
             for (int i = 0; i < allCards.size()-3; i++) {
                 players[i%3].getCard(allCards.get(i));
             }
+            for (int i=0; i<3; ++i){
+                players[i].sortCards();
+            }
             logger.info("发牌成功");
+            if (testflag.equals("test")){
+                for (int i=0; i<3; ++i){
+                    System.out.printf("%-8s:",players[i].name);
+                    System.out.println(players[i].cards);
+                }
+            }
+//          抢地主
+            List<Card> lastCards = allCards.subList(allCards.size()-3, allCards.size());
+            int random = (int)(Math.random()*3);
+            players[random].getCard(lastCards);
+            players[random].sortCards();
+            logger.info("身份分配成功");
+            if (testflag.equals("test")){
+                System.out.print("底牌为：");
+                System.out.println(lastCards);
+                System.out.printf("%-8s抢到地主\n",players[random].name);
+            }
+//            看牌
+            logger.info("玩家看牌");
+            for (int i=0; i<3; ++i){
+                System.out.printf("%-8s:",players[i].name);
+                System.out.println(players[i].cards);
+            }
         }
     }
-//玩家
-    private class Player{
-        public String name;
-        public List<Card> cards;
-        public Player(String name){
-            this.name = name;
-            this.cards = new ArrayList<>();
-        }
-        public void getCard(Card c){
-            cards.add(c);
-        }
-    }
+
     @Test
     public void test01(){
         Room r1 = new Room();
         r1.start();
+
     }
 
 }
