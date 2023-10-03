@@ -1,8 +1,7 @@
-package org.kmo.map;
+package org.kmo.d03_map;
 
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

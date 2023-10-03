@@ -1,4 +1,4 @@
-package org.kmo.set;
+package org.kmo.d02_set;
 
 import org.junit.Test;
 import org.kmo.utils.StudentCom;

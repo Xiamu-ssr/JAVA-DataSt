@@ -3,9 +3,7 @@ package org.kmo.program;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * <h2>需求：</h2>
@@ -25,5 +23,15 @@ public class P02 {
             list.add(select[s]);
         }
         System.out.println(list);
+//        2.统计
+        Map<String, Integer> map = new HashMap<>();
+        list.forEach(l->{
+            if (map.containsKey(l)){
+                map.put(l, map.get(l)+1);
+            }else {
+                map.put(l, 1);
+            }
+        });
+        System.out.println(map);
     }
 }

@@ -2,6 +2,8 @@ package org.kmo.useless;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class useless {
     @Test
     public void test01(){
@@ -9,8 +11,6 @@ public class useless {
     }
 
     public void chpara(int...nums){
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(nums[i]);
-        }
+
     }
 }

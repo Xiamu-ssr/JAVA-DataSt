@@ -1,6 +1,7 @@
-package org.kmo.map;
+package org.kmo.d03_map;
 
 import org.junit.Test;
+import org.kmo.utils.StudentCom;
 
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -77,5 +78,19 @@ public class HashMapClass {
                 System.out.println(s + ": " + aDouble);
             }
         });
+    }
+
+    /**
+     * 测试自定义对象去重原理
+     * */
+    @Test
+    public void test04(){
+        Map<StudentCom, String> map = new HashMap<>();
+        map.put(new StudentCom("蜘蛛精", 25, 168.5), "盘丝洞");
+        map.put(new StudentCom("蜘蛛精", 25, 168.5), "水帘洞");
+        map.put(new StudentCom("至尊宝", 23, 173.5), "水帘洞");
+        map.put(new StudentCom("牛魔王", 28, 178.5), "牛头山");
+        System.out.println(map);
+
     }
 }

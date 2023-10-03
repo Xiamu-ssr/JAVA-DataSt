@@ -1,4 +1,4 @@
-package org.kmo.list;
+package org.kmo.d01_list;
 
 import java.util.LinkedList;
 import java.util.List;

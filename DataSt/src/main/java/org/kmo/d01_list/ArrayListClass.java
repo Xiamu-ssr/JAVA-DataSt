@@ -1,4 +1,4 @@
-package org.kmo.list;
+package org.kmo.d01_list;
 
 import org.junit.Test;
 import org.slf4j.Logger;
