@@ -1,0 +1,7 @@
+根据我搜索到的结果，一般资源文件夹放在 src/main/resources 下面¹²。这样可以方便使用类加载器或者类的 getResource 方法来加载资源文件¹。比如图片，excel，以及配置文件等，都可以放在这个目录下，或者在这个目录下创建子目录来分类存放。如果是证书文件，一般采用绝对路径来部署³。
+
+源: 与必应的对话， 2023/10/3
+(1) （三）Java资源文件和路径相关扫盲 - 知乎 - 知乎专栏. https://zhuanlan.zhihu.com/p/68065612.
+(2) JAVA 开发规范（java-standard-guide） - 知乎 - 知乎专栏. https://zhuanlan.zhihu.com/p/413278453.
+(3) 一般资源文件要放到java项目中的哪里？ - 知乎. https://www.zhihu.com/question/301660690.
+(4) Java目录结构_java代码标准目录结构-CSDN博客. https://blog.csdn.net/hxxjxw/article/details/96962339.
