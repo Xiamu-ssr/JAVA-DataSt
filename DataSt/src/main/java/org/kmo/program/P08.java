@@ -61,6 +61,7 @@ public class P08 {
 
     @Test
     public void test01(){
+        clear(outPath);
         List<oneLine> poem = new ArrayList<>();
         try (
                 FileReader fr = new FileReader(inPath);
