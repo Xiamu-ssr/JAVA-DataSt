@@ -9,15 +9,18 @@ import org.slf4j.LoggerFactory;
  * */
 
 public class SpecTest03 {
-    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger("");
+    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger("SpecTest03");
     public static void main(String[] args) {
-        try {
-            LOGGER.info("除法开始");
-            chu(10, 0);
-            LOGGER.info("执行成功");
-        }catch (Exception e){
-            LOGGER.error("除法执行错误");
+        while (true){
+            try {
+                LOGGER.info("除法开始");
+                chu(10, 0);
+                LOGGER.info("执行成功");
+            }catch (Exception e){
+                LOGGER.error("除法执行错误");
+            }
         }
+
     }
     public static void chu(int a, int b){
         LOGGER.debug("参数a:"+a);
