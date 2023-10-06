@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--注释:以上抬头必须有且在第一行-->
+<!--根标签只能有1个-->
+<users>
+    <user id="1">
+        <name>张无忌</name>
+        <sex>男</sex>
+        <地址>上海</地址>
+        <password>
+<!--            特殊数据区-->
+            <![CDATA[
+                wudi哈哈<<><><><>%%"""'zwj
+            ]]>
+        </password>
+    </user>
+    <user id="2">
+        <name>东方不败</name>
+        <sex>女</sex>
+        <地址>北京</地址>
+<!--        特殊字符转义-->
+        <password>&lt;dffff&gt;&apos;&quot;&amp;bd</password>
+    </user>
+    <people>
+        <test>test</test>
+    </people>
+
+</users>
