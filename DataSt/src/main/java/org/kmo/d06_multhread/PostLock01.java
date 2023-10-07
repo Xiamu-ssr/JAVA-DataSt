@@ -13,7 +13,7 @@ public class PostLock01 {
         private int number;
         @Override
         public void run() {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10000; i++) {
                 synchronized (this){
                     ++number;
                 }
@@ -25,7 +25,7 @@ public class PostLock01 {
         private AtomicInteger number = new AtomicInteger();
         @Override
         public void run() {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10000; i++) {
                 number.incrementAndGet();
             }
         }
@@ -46,14 +46,14 @@ public class PostLock01 {
 
     public static void pessLock(){
         Runnable target = new MyRunnable01();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 32; i++) {
             new Thread(target).start();
         }
     }
 
     public static void optiLock(){
         Runnable target = new MyRunnable02();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 32; i++) {
             new Thread(target).start();
         }
     }
