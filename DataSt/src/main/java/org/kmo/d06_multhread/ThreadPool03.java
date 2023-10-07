@@ -30,10 +30,11 @@ public class ThreadPool03 {
 
     public static void main(String[] args) throws Exception {
         //1.create threadpool object
-        ThreadPoolExecutor threadPool = new ThreadPoolExecutor(3, 5, 8, TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(4),
-                Executors.defaultThreadFactory(),
-                new ThreadPoolExecutor.CallerRunsPolicy());
+//        ThreadPoolExecutor threadPool = new ThreadPoolExecutor(3, 5, 8, TimeUnit.SECONDS,
+//                new ArrayBlockingQueue<>(4),
+//                Executors.defaultThreadFactory(),
+//                new ThreadPoolExecutor.CallerRunsPolicy());
+        ExecutorService threadPool = Executors.newFixedThreadPool(3);
 
         List<Future<String>> listF = new ArrayList<>();
         listF.add(threadPool.submit(new MyCallable(80)));// core 1
