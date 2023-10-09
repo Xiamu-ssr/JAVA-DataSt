@@ -1,0 +1,6 @@
+--------Student--------
+name --> 淇
+age --> 22
+sex --> 女
+height --> 167.56
+hobby --> swim
