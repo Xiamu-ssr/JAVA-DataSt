@@ -69,7 +69,15 @@ public class TreeSetClass {
     }
     @Test
     public void test04(){
-        Set<StudentCom> set2 = new TreeSet<>((o1, o2)->Double.compare(o1.height,o2.height));
+        Set<StudentCom> set2 = new TreeSet<>((o1, o2)->{
+            if (o1.age!=o2.age){
+                return Integer.compare(o1.age, o2.age);
+            }else if (o1.height!=o2.height){
+                return Double.compare(o1.height, o2.height);
+            }else{
+                return o1.name.compareTo(o2.name);
+            }
+        });
         set2.add(new StudentCom("至尊宝",28,178.4));
         set2.add(new StudentCom("之猪猪",20,165.1));
         set2.add(new StudentCom("矮人",20,167.2));

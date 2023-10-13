@@ -31,6 +31,7 @@ public class StreamTest2 {
         map.put("迪丽热巴", 168.3);
         map.put("马尔扎哈", 166.3);
         map.put("卡尔扎巴", 168.3);
+        Stream<Map.Entry<String, Double>> stream = map.entrySet().stream();
         map.entrySet().stream().filter(s -> s.getKey().contains("尔")).forEach(s -> System.out.println(s));
 
         //4、如何获取数组的Stream流？
